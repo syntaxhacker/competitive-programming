@@ -4,7 +4,7 @@
 using namespace std;
 /*------------------junk----------------------*/
 #define TMP template<typename
-#define DEBUG
+// #define DEBUG
 #ifdef DEBUG
 #define oo(...) __f(#__VA_ARGS__, __VA_ARGS__)
 TMP Arg1>
@@ -44,9 +44,9 @@ const int MOD = 1e9 + 7;
 #define mp make_pair
 #define vi vector<int>
 #define vlli vector<lli>
-const lli inf =  2e9;
+
 /*----------fast input-------------*/
-#define ff
+//#define ff
 #ifdef ff
 TMP T>
 inline void in(T &x)
@@ -67,25 +67,16 @@ void in(T&... args){
 }
 #endif
 /*----------check constraints again-------------*/
-vlli v;
+
 int32_t main()
 {
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
   cout.tie(NULL);
-  lli t , x,y , fx;
-  x=y=0;
-  while(x < inf){
-    x= sqrt(y);
-    while(x*x <= y) x++;
-    while((x-1)*(x-1) > y) x--;
-    v.pb(x);
-    y+= x*x;
-  }
+  int t , n;
   in(t);
   while(t--){
-    in(fx);
-    lli i = upper_bound(all(v) , fx) - v.begin();
-    oup(i);
+  in(n);
+  vi a(n);ra(a);
   }
 }

@@ -73,12 +73,10 @@ int32_t main()
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
   cout.tie(NULL);
-  string s,r;
-  int n , t;
+  int t , n;
   in(t);
   while(t--){
-  in(n,s, r);
-  sort(all(s));
-  sort(all(r));
-  if(s == r) oup("YES"); else oup("NO");}
+  in(n);
+  vi a(n);ra(a);
+  }
 }
