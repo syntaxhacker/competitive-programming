@@ -19,7 +19,6 @@ for(int i = 0 ;i<n ; ++i){
     }while(used.count(x));
     cout << x << " ";
     used.insert(x);
-
 }
 puts("");
 }

@@ -4,7 +4,7 @@
 using namespace std;
 /*------------------junk----------------------*/
 #define TMP template<typename
-// #define DEBUG
+#define DEBUG
 #ifdef DEBUG
 #define oo(...) __f(#__VA_ARGS__, __VA_ARGS__)
 TMP Arg1>
@@ -46,7 +46,7 @@ const int MOD = 1e9 + 7;
 #define vlli vector<lli>
 
 /*----------fast input-------------*/
-//#define ff
+// #define ff
 #ifdef ff
 TMP T>
 inline void in(T &x)
@@ -73,10 +73,25 @@ int32_t main()
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
   cout.tie(NULL);
-  int t , n;
+  int t ,n ,mi, m ,c,p , k , l ,r;
   in(t);
   while(t--){
-  in(n);
-  vi a(n);ra(a);
+  in(n ,m,k,l,r);
+  mi = INT_MAX;
+  fri(i, 0 , n){
+    in(c , p);
+    fri(j , 0 , m){
+    if(c > k+1) c--;
+    else if(c < k-1) c++;
+    else {c = k;break;}}
+
+    if( (c <= r )&& (c >= l) && (p < mi) )
+        mi = p;
+  }
+  if(mi == INT_MAX){
+    oup(-1);
+  }else{
+    oup(mi);
+  }
   }
 }
