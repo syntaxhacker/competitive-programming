@@ -3,27 +3,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 /*------------------junk----------------------*/
-#define TMP template<typename
-// #define DEBUG
-#ifdef DEBUG
-#define oo(...) __f(#__VA_ARGS__, __VA_ARGS__)
-TMP Arg1>
-void __f(const char *name, Arg1 &&arg1)
-{cout << name << ": " << arg1 << "\n";}
-TMP Arg1, typename... Args>
-void __f(const char *names, Arg1 &&arg1, Args &&... args)
-{const char *comma = strchr(names + 1, ',');cout.write(names, comma - names) << ": " << arg1 << " |";__f(comma + 1, args...);
-}
-#endif
-TMP Arg1>
-void oup(Arg1 arg1){
-(cout << arg1 <<"\n");
-}
-TMP... T>
-void oup(T&... args){
-((cout << args <<"\n") , ...);
-}
-
 typedef long long int lli;
 typedef unsigned long long int ulli;
 const int MOD = 1e9 + 7;
@@ -45,6 +24,16 @@ const int MOD = 1e9 + 7;
 #define vi vector<int>
 #define vlli vector<lli>
 
+#define TMP template<typename
+TMP Arg1>
+void oup(Arg1 arg1){
+(cout << arg1 <<"\n");
+}
+TMP... T>
+void oup(T&... args){
+((cout << args <<" ") , ...);
+cout <<  endl;
+}
 /*----------fast input-------------*/
 //#define ff
 #ifdef ff
@@ -64,6 +53,34 @@ inline void in(T &x)
 TMP... T>
 void in(T&... args){
 ((cin >> args) , ...);
+}
+#endif
+#ifdef LOCAL 
+template < class c > struct rge { c b, e; };
+template < class c > rge<c> range(c i, c j) { return rge<c>{i, j}; }
+template < class c > auto dud(c* x) -> decltype(cerr << *x, 0);
+template < class c > char dud(...);
+struct debug {
+    
+    ~debug() { cerr << endl; }
+    template < class c > typename enable_if<sizeof dud<c>(0) != 1, debug&>::type operator<<(c i) { cerr << boolalpha << i; return * this; }
+    template < class c > typename enable_if<sizeof dud<c>(0) == 1, debug&>::type operator<<(c i) { return * this << range(begin(i), end(i)); }
+    template < class c, class b > debug & operator <<(pair < b, c > d) {
+        return * this << "(" << d.first << ", " << d.second << ")";
+    }
+    template < class c > debug & operator <<(rge<c> d) {
+        *this << "[";
+        for (auto it = d.b; it != d.e; ++it)
+            *this << ", " + 2 * (it == d.b) << *it;
+        return * this << "]";
+    }};
+#define oo(...) __f(#__VA_ARGS__, __VA_ARGS__)
+TMP Arg1>
+void __f(const char *name, Arg1 &&arg1)
+{cout << name << ": " << arg1 << "\n";}
+TMP Arg1, typename... Args>
+void __f(const char *names, Arg1 &&arg1, Args &&... args)
+{const char *comma = strchr(names + 1, ',');cout.write(names, comma - names) << ": " << arg1 << " |";__f(comma + 1, args...);
 }
 #endif
 /*----------check constraints again-------------*/
