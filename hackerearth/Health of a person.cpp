@@ -17,7 +17,7 @@ const int MOD = 1e9 + 7;
 #define rall(x) (x).rbegin(),(x).rend()
 #define f2a(x , n , v)  fill(&(x)[0][0], &(x)[0][0] + (0 + n) *(0 + n) , (v))
 #define fa(x , n , v) fill( (x), (x)+(n), (v)) 
-#define ra(a) for(int &x : (a)) cin >> (x)
+#define ra(a) for(int &x : (a)) in(x)
 #define pa(a) for(int &x : (a)) cout << (x) << " ";cout << "\n"
 #define pb emplace_back
 #define mp make_pair
@@ -25,22 +25,6 @@ const int MOD = 1e9 + 7;
 #define vlli vector<lli>
 
 #define TMP template<typename
-/*----------fast input-------------*/
-//#define ff
-#ifdef ff
-TMP T>
-inline void in(T &x)
-    {
-    register T c = getchar_unlocked();
-    x = 0;
-    T neg = 0;
-    for(;((c<48 || c>57) && c != '-');c = getchar_unlocked());
-    if(c=='-') {neg=1;c=getchar_unlocked();}
-    for(;c>47 && c<58;c = getchar_unlocked()) {x = (x<<1) + (x<<3) + c - 48;}
-    if(neg) x=-x;
-    }
-#else
-#endif
 #ifdef LOCAL 
 template < class c > struct rge { c b, e; };
 template < class c > rge<c> range(c i, c j) { return rge<c>{i, j}; }
@@ -70,16 +54,30 @@ void __f(const char *names, Arg1 &&arg1, Args &&... args)
 }
 #endif
 /*----------check constraints again-------------*/
-
+int a[100009];
+int b[100009];
+int c[100009];
 int32_t main()
 {
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
   cout.tie(NULL);
-  int t , n;
+  int t, n , m;
   cin >> t;
   while(t--){
-  cin >> n;
-  vi a(n);ra(a);
+  cin >> n >> m;
+  frie(i , 1 , n) cin >> a[i];
+  frie(i , 1 , m) cin >> b[i];
+  frie(i , 1, m){
+      for(int j =1;j <= n ; ++j){
+          if((a[j] > 0) && (j%i ==0) ){
+          cerr << a[j] << "-" << b[i] << " j- " <<j << " "<<"i - "<< i<< endl;
+          a[j]-=b[i];
+          if(a[j] > 0) {a[j] +=b[i];c[j] = -1;}
+          else{ c[j] = i ;}
+          }
+      }
+  }
+  frie(i , 1 , n) cout << c[i] << "\n";
   }
 }

@@ -1,0 +1,7 @@
+*.oup
+out*
+in
+in*
+temptest.cpp
+tmp.sh
+[0-9].cpp

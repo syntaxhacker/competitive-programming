@@ -17,7 +17,7 @@ const int MOD = 1e9 + 7;
 #define rall(x) (x).rbegin(),(x).rend()
 #define f2a(x , n , v)  fill(&(x)[0][0], &(x)[0][0] + (0 + n) *(0 + n) , (v))
 #define fa(x , n , v) fill( (x), (x)+(n), (v)) 
-#define ra(a) for(int &x : (a)) in(x)
+#define ra(a) for(int &x : (a)) cin >> (x)
 #define pa(a) for(int &x : (a)) cout << (x) << " ";cout << "\n"
 #define pb emplace_back
 #define mp make_pair
@@ -25,15 +25,6 @@ const int MOD = 1e9 + 7;
 #define vlli vector<lli>
 
 #define TMP template<typename
-TMP Arg1>
-void oup(Arg1 arg1){
-(cout << arg1 <<"\n");
-}
-TMP... T>
-void oup(T&... args){
-((cout << args <<" ") , ...);
-cout <<  endl;
-}
 /*----------fast input-------------*/
 //#define ff
 #ifdef ff
@@ -48,12 +39,7 @@ inline void in(T &x)
     for(;c>47 && c<58;c = getchar_unlocked()) {x = (x<<1) + (x<<3) + c - 48;}
     if(neg) x=-x;
     }
-
 #else
-TMP... T>
-void in(T&... args){
-((cin >> args) , ...);
-}
 #endif
 #ifdef LOCAL 
 template < class c > struct rge { c b, e; };
@@ -91,9 +77,9 @@ int32_t main()
   cin.tie(NULL);
   cout.tie(NULL);
   int t , n;
-  in(t);
+  cin >> t;
   while(t--){
-  in(n);
+  cin >> n;
   vi a(n);ra(a);
   }
 }
