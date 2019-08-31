@@ -23,6 +23,7 @@ const int MOD = 1e9 + 7;
 #define mp make_pair
 #define vi vector<int>
 #define vlli vector<lli>
+#define debug() if(0)
 
 #define TMP template<typename
 /*----------fast input-------------*/

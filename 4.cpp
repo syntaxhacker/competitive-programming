@@ -70,16 +70,36 @@ void __f(const char *names, Arg1 &&arg1, Args &&... args)
 }
 #endif
 /*----------check constraints again-------------*/
-
+int a[100006];
 int32_t main()
 {
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
   cout.tie(NULL);
-  int t , n;
+  memset(a , 0 , sizeof a);
+  int t , n , m , k;
   cin >> t;
   while(t--){
-  cin >> n;
-  vi a(n);ra(a);
+  cin >> n >> m;
+  k = n*m;
+  fri(i ,1, k){
+      int j , l;
+      int tmp = 1;
+//       for(j =1 ; j<=n ; ++j){
+//       for(l = tmp; l<=m ; l+=i+1){
+//         a[i]++;
+//       }
+//       tmp = abs(l-m);
+//   }
+//   tmp = 1;
+oo(i);
+   for(j = 1; j<=n ; j+=i+1){
+       
+      for(l = 1; l<=m ; ++l){
+        cout << j << " " << l << endl;
+      }
+      tmp = n;
   }
-}
+//   oo(i , a[i]);
+  }
+}}

@@ -70,16 +70,30 @@ void __f(const char *names, Arg1 &&arg1, Args &&... args)
 }
 #endif
 /*----------check constraints again-------------*/
-
+int a[3];
+int b[3];
 int32_t main()
 {
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
   cout.tie(NULL);
-  int t , n;
+  int t ;
   cin >> t;
   while(t--){
-  cin >> n;
-  vi a(n);ra(a);
-  }
+      bool f = 1;
+    fri(i,0,3) cin >> a[i];
+    fri(i,0,3) cin >> b[i];
+    fri(i ,0 ,3)
+    fri(j,0,3){
+        if(i!=j){
+            if(a[i] < a[j]){
+                if(b[i] > b[j]) {f = 0; break;}
+            }else if(a[i] == a[j]){
+                if(b[i] != b[j] ) {f = 0; break;}
+            }
+        }
+    }
+    if(f) cout << "FAIR\n"; else cout << "NOT FAIR\n";
+}
+
 }
