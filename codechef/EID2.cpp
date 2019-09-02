@@ -70,45 +70,32 @@ void __f(const char *names, Arg1 &&arg1, Args &&... args)
 }
 #endif
 /*----------check constraints again-------------*/
-int a[100006];
+int a[3];
+int b[3];
 int32_t main()
 {
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
   cout.tie(NULL);
-  int t , n , k;
+  int t ;
   cin >> t;
   while(t--){
-  cin >> n >> k;
-  fri(i,0,n){
-      cin >> a[i];
-  }
-  int tmp = 1;
-  fri(i,0,n){
-    if(tmp == k){
-        tmp = 1;
-    }
-    if(a[i] == -1){
-        if(i >= 0 && i <n){
-            a[i] = tmp;
-            tmp++;
+      bool f = 1;
+    fri(i,0,3) cin >> a[i];
+    fri(i,0,3) cin >> b[i];
+    fri(i ,0 ,3)
+    fri(j,0,3){
+        if(i!=j){
+            if(a[i] < a[j]){
+                if(b[i] >= b[j]) {f = 0; break;}
+            }else if(a[i] == a[j]){
+                if(b[i] != b[j] ) {f = 0; break;}
+            }else{
+                if(b[i] <= b[j]) {f = 0; break;}
+            }
         }
-    }else{
-        tmp = 1;
     }
-  }
-  bool f = 1;
-  fri(i,1,n){
-      if(a[i] == a[i-1]) {f = 0;break;}
-  }
-  if(f) {
-      cout << "YES\n";
-      fri(i , 0 , n){
-          cout << a[i] << " ";
-      }
-      cout << "\n";
-  } 
-  else{ cout << "NO\n";}
-  }
+    if(f) cout << "FAIR\n"; else cout << "NOT FAIR\n";
+}
 
 }
